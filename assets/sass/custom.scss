@@ -1,0 +1,103 @@
+@import 'swiper';
+.outer-tabs-wrapper {
+  margin:-10px -10px;
+}
+.custom-tabs-slider {
+  width: 100%;
+  float: left;
+  padding: 100px 20px;
+  position: relative;
+  transition: all ease .2s;
+  #tab-links {
+    margin: 0 0 40px;
+    padding: 0 0;
+    list-style: none;
+    width: 100%;
+    float: left;
+    li {
+      display: inline-block;
+      float: left;
+      margin-right: 4vw;
+      opacity: 0.35;
+      transition: all ease .3s;
+      &.active {
+        opacity: 1;
+      }
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 35px;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #FFF;
+      outline: none;
+      &:focus, &:active {
+        outline: none;
+      }
+    }
+  }
+  .tab-info {
+    color: #FFF;
+  }
+
+  .tab-swiper-wrap {
+    width: 100%;
+    float: left;
+    position: relative;
+    z-index: 10;
+  }
+  .swiper-wrapper {
+    z-index: 20;
+  }
+  .swiper-slide {
+    opacity: 0;
+    visibility: hidden;
+    &.swiper-slide-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  .swiper-pagination {
+    display: none;
+  }
+
+  .inner-wrap {
+    max-width: 1000px;
+    width: 100%;
+    margin:0 auto;
+    position: relative;
+  }
+
+  .tab-section-title {
+    h2 {
+      margin:0 0 40px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #FFF;
+      span {
+        display: inline-block;
+        border-bottom: 2px solid #FFF;
+        padding-bottom: 17px;
+      }
+    }
+  }
+
+  .buttondiv {
+    margin-top: 50px;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      &:hover {
+        background-color: tint(#FFF,.5%);
+      }
+    }
+  }
+}
