@@ -38,5 +38,36 @@ jQuery(document).ready(function($){
       $('#tab-links li#custom-tab-'+id).addClass('active');
     }
   }
+  // var passedNum = 0;
+  $(window).on('scroll',function() {
+    // var offset = $(window).scrollTop();
+    //     offset = Math.round(offset/2);
+    //     var top_offset = '-' + offset + 'px';
+    //     passedNum += 20;
+    //     $('#car-lines-2 span').css({
+    //       'margin-top': '-' + passedNum + 'px'
+    //     });
+    //   console.log(passedNum);
+    $("#car-icon").addClass('moved');
+    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+      $("#car-icon").addClass('bottom');
+    } else {
+      $("#car-icon").removeClass('bottom');
+    }
+  });
+
+
+
+  $.fn.scrollStopped = function(callback) {
+    var that = this, $this = $(that);
+    $this.scroll(function(ev) {
+      clearTimeout($this.data('scrollTimeout'));
+      $this.data('scrollTimeout', setTimeout(callback.bind(that), 250, ev));
+    });
+  };
+
+  $(window).scrollStopped(function(ev){
+    $("#car-icon").removeClass('moved');
+  });
 
 });

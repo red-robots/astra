@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="https://gmpg.org/xfn/11">
 <?php wp_head(); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/custom.min.css">
 <?php astra_head_bottom(); ?>
 </head>
@@ -38,6 +39,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	title="<?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>">
 		<?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>
 </a>
+
+<div id="car-icon" class="animate__animated"></div>
+<div id="car-lines-1"></div>
+<div id="car-lines-2"><span></span></div>
+
 
 <div
 <?php

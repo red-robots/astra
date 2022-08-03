@@ -12,6 +12,10 @@
  * @since       Astra 1.0.0
  */
 
+define('THEMEURI',get_template_directory_uri() . '/');
+define('ASSETS_URL',get_template_directory_uri() . '/assets');
+define('IMAGES_URL',get_template_directory_uri() . '/assets/images');
+
 /**
  * Function to get Body Font Family
  */
