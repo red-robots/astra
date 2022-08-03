@@ -177,7 +177,7 @@ $nav_width: 350px;
 	background-image: url("data:image/svg+xml,%3csvg width='100%30' height='100%30' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%30' height='100%30' fill='none' stroke='%23333' stroke-width='3' stroke-dasharray='5%2c10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 @mixin broken_lines_white() {
-	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='4' stroke-dasharray='5%2c15' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
+	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='4' stroke-dasharray='5%2c15' stroke-dashoffset='2' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 @mixin broken_lines_white_v2() {
 	background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='2' stroke-dasharray='6%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
