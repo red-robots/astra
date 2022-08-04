@@ -33,14 +33,11 @@ $terms = get_terms([
 ]);
 if($terms) { ?>
 <style type="text/css">
-  <?php foreach($terms as $term) {
-  $term_slug = $term->slug;
-  $color = (get_field('term_color', $term)) ? get_field('term_color', $term) : '#64B7D1'; 
-  ?>
-  .uael-post__body .uael-post-wrapper.<?php echo $term_slug ?> .uael-post__terms-wrap span.uael-post__terms {
-    background-color: <?php echo $color ?>!important;
-  }
-  <?php } ?>
+<?php foreach($terms as $term) {
+$term_slug = $term->slug;
+$color = (get_field('term_color', $term)) ? get_field('term_color', $term) : '#64B7D1'; ?>
+.uael-post__body .uael-post-wrapper.<?php echo $term_slug ?> .uael-post__terms-wrap span.uael-post__terms { background-color: <?php echo $color ?>!important }
+<?php } ?>
 </style>
 <?php
 }
