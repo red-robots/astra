@@ -26,6 +26,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/assets/css/custom.min.css">
 <?php astra_head_bottom(); ?>
+<?php  
+$terms = get_terms([
+  'taxonomy' => 'category',
+  'hide_empty' => false,
+]);
+if($terms) { ?>
+<style type="text/css">
+  <?php foreach($terms as $term) {
+  $term_slug = $term->slug;
+  $color = (get_field('term_color', $term)) ? get_field('term_color', $term) : '#64B7D1'; 
+  ?>
+  .uael-post__body .uael-post-wrapper.<?php echo $term_slug ?> .uael-post__terms-wrap span.uael-post__terms {
+    background-color: <?php echo $color ?>!important;
+  }
+  <?php } ?>
+</style>
+<?php
+}
+?>
 </head>
 
 <body <?php astra_schema_body(); ?> <?php body_class(); ?>>
