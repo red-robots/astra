@@ -249,6 +249,10 @@ body.elementor-page-1188 {
 
 
 .footer-social-media {
+  margin-bottom: 15px;
+  @include tab {
+    margin-bottom: 0;
+  }
   .elementor-widget-wrap {
     @include flexgroup();
     @include flexbox-justify(center);
