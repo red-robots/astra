@@ -16,6 +16,84 @@ define('THEMEURI',get_template_directory_uri() . '/');
 define('ASSETS_URL',get_template_directory_uri() . '/assets');
 define('IMAGES_URL',get_template_directory_uri() . '/assets/images');
 
+/*Remove WordPress menu from admin bar*/
+add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
+function remove_wp_logo( $wp_admin_bar ) {
+  $wp_admin_bar->remove_node( 'wp-logo' );
+}
+
+/*-------------------------------------
+  Custom client login, link and title.
+---------------------------------------*/
+function my_login_logo() { 
+  $custom_logo_id = get_theme_mod( 'custom_logo' );
+  $logoImg = wp_get_attachment_image_src($custom_logo_id,'large');
+  $logo_url = ($logoImg) ? $logoImg[0] : '';
+  if($logo_url) { ?>
+  <style type="text/css">
+    body.login {
+      background-color: #c5e8f3;
+    }
+    body.login div#login h1 a {
+      background-image: url(<?php echo $logo_url; ?>);
+      background-size: contain;
+      background-position: center;
+      width: 100%;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    .login #backtoblog, .login #nav {
+      text-align: center;
+    }
+    body.login #backtoblog a, 
+    body.login #nav a {
+      color: #0e3e7b;
+      transition: all ease .3s;
+    }
+    body.login #backtoblog a:hover,
+    body.login #nav a:hover {
+      color: #e78422;
+    }
+    body.login form {
+      border: none;
+      border-radius: 0;
+    }
+    body.login #login form p.submit {
+      display: block;
+      width: 100%;
+    }
+    body.login #login form p.submit input.button-primary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+    }
+    body.login.wp-core-ui .button-primary {
+      background: #173d6d;
+      border-color: #0b2a52;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all ease .3s;
+    }
+    body.login.wp-core-ui .button-primary:hover {
+      background: #0e5bbd;
+    }
+  </style>
+<?php }
+}
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+// Change Link
+function loginpage_custom_link() {
+  return get_site_url();
+}
+add_filter('login_headerurl','loginpage_custom_link');
+
+function bella_login_logo_url_title() {
+    return get_bloginfo('name');
+}
+add_filter( 'login_headertitle', 'bella_login_logo_url_title' );
+
 /**
  * Function to get Body Font Family
  */
