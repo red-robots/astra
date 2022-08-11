@@ -37,8 +37,9 @@
               $button_link = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
               $button_target = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
               $btn_bgcolor = (isset($button['button_bgcolor']) && $button['button_bgcolor']) ? $button['button_bgcolor'] : '';
-              $btn_bgcolor_hover = (isset($button['button_bgcolor_hover']) && $button['button_bgcolor_hover']) ? $button['button_bgcolor_hover'] : '';
-              $btn_txtcolor = (isset($button['button_text_color']) && $button['button_text_color']) ? $button['button_text_color'] : '';
+              $btn_bgcolor_hover = (isset($button['button_bgcolor_hover']) && $button['button_bgcolor_hover']) ? $button['button_bgcolor_hover'] : '#2b2b2b';
+              $btn_txtcolor = (isset($button['button_text_color']) && $button['button_text_color']) ? $button['button_text_color'] : '#FFF';
+              $btn_txtcolor_hover = (isset($button['button_text_color_hover']) && $button['button_text_color_hover']) ? $button['button_text_color_hover'] : '#FFF';
               $btn_style = '';
               if($btn_bgcolor && $btn_txtcolor) {
                 $btn_style = ' style="background-color:'.$btn_bgcolor.';color:'.$btn_txtcolor.'"';
@@ -56,12 +57,13 @@
                   <?php } ?>
                 </div>
                 <style type="text/css">
-                  .tab-button-<?php echo $n?>{
+                  .tab-button-<?php echo $n?> {
                     background-color: <?php echo $btn_bgcolor ?>;
                     color: <?php echo $btn_txtcolor ?>!important;
                   }
                   .tab-button-<?php echo $n?>:hover {
-                    background-color: <?php echo $btn_bgcolor_hover ?>;
+                    background-color: <?php echo $btn_bgcolor_hover ?>!important;
+                    color: <?php echo $btn_txtcolor_hover ?>!important;
                   }
                 </style>
               </div>
