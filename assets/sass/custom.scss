@@ -302,3 +302,11 @@ body.elementor-page-1188 {
     text-align: right;
   }
 }
+.elementor-location-footer {
+  .footer-disclaimer {
+    padding-right: 10vw;
+    @include tab {
+      padding-right: 0;
+    }
+  }
+}
