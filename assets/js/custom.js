@@ -38,24 +38,23 @@ jQuery(document).ready(function($){
       $('#tab-links li#custom-tab-'+id).addClass('active');
     }
   }
-  // var passedNum = 0;
+
   $(window).on('scroll',function() {
-    // var offset = $(window).scrollTop();
-    //     offset = Math.round(offset/2);
-    //     var top_offset = '-' + offset + 'px';
-    //     passedNum += 20;
-    //     $('#car-lines-2 span').css({
-    //       'margin-top': '-' + passedNum + 'px'
-    //     });
-    //   console.log(passedNum);
     $("#car-icon").addClass('moved');
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+    if($(window).scrollTop() + window.innerHeight > $(document).height() - 50) {
       $("#car-icon").addClass('bottom');
     } else {
       $("#car-icon").removeClass('bottom');
     }
-  });
 
+    var currentWindow = Math.round($(window).height()/2);
+
+    if( $(window).scrollTop()>= 500 ) {
+      $('.rside-broken-lines-2').addClass('adjust');
+    } else {
+      $('.rside-broken-lines-2').removeClass('adjust');
+    }
+  });
 
 
   $.fn.scrollStopped = function(callback) {
@@ -69,5 +68,6 @@ jQuery(document).ready(function($){
   $(window).scrollStopped(function(ev){
     $("#car-icon").removeClass('moved');
   });
+
 
 });

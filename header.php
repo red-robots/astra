@@ -57,9 +57,8 @@ $color = (get_field('term_color', $term)) ? get_field('term_color', $term) : '#6
 </a>
 
 <div id="car-icon" class="animate__animated"></div>
-<div id="car-lines-1"></div>
-<div id="car-lines-2"><span></span></div>
-
+<div class="rside-broken-lines"></div>
+<div class="rside-broken-lines-2"></div>
 
 <div
 <?php

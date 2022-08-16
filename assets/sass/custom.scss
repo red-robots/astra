@@ -103,85 +103,115 @@
   }
 }
 
-body.home {
-  #car-icon {
+#car-icon {
+  display: block;
+  width: 50px;
+  height: 70px;
+  background-image: url("../images/car.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 40vh;
+  right: 8px;
+  z-index: 999;
+  @include animateThis(1s);
+  //animation: headShake 2s infinite;
+  transition: all ease .3s;
+  &.moved {
+    animation-duration: 5s;
+    animation: shakeY 4s infinite;
+    transform: translateY(60px);
+  }
+  &.bottom {
+    top: 90vh!important;
+  }
+}
+#car-lines-1 {
+  display: none;
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  z-index: 810;
+  &:before {
+    content:"";
     display: block;
-    width: 50px;
-    height: 70px;
-    background-image: url("../images/car.svg");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: fixed;
-    top: 50vh;
-    right: 8px;
-    z-index: 999;
-    @include animateThis(1s);
-    //animation: headShake 2s infinite;
-    transition: all ease .3s;
-    &.moved {
-      animation-duration: 5s;
-      animation: shakeY 4s infinite;
-      // @include animateEffect(shakeX);
-
-      transform: translateY(60px);
-    }
-    &.bottom {
-      top: 85vh;
-    }
-  }
-  #car-lines-1 {
-    display: none;
-    width: 5px;
+    width: 2px;
     height: 100%;
-    position: absolute;
-    top: 0;
-    right: 30px;
-    z-index: 810;
-    &:before {
-      content:"";
-      display: block;
-      width: 2px;
-      height: 100%;
-      position:absolute;
-      top: 60vh;
-      left: 0;
-      @include broken_lines_white();
-    }
+    position:absolute;
+    top: 60vh;
+    left: 0;
+    @include broken_lines_white();
   }
-  #car-lines-2 {
-    // width: 5px;
+}
+#car-lines-2 {
+  // width: 5px;
+  // height: 100%;
+  // position: fixed;
+  // top: 0;
+  // right: 30px;
+  // z-index: 810;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  z-index: 3000;
+  span {
+    display: block;
+    // width: 2px;
     // height: 100%;
-    // position: fixed;
-    // top: 0;
-    // right: 30px;
-    // z-index: 810;
-    width: 60px;
-    height: 100%;
+    // position:absolute;
+    // top: 60vh;
+    // left: 0;
+    width: 2px;
+    bottom: 0;
+    height: 76%;
     position: absolute;
-    right: 0;
-    z-index: 3000;
-    span {
-      display: block;
-      // width: 2px;
-      // height: 100%;
-      // position:absolute;
-      // top: 60vh;
-      // left: 0;
-      width: 2px;
-      bottom: 0;
-      height: 76%;
-      position: absolute;
-      left: 0;
-      overflow: hidden;
-      @include broken_lines_white();
-    }
+    left: 0;
+    overflow: hidden;
+    @include broken_lines_white();
   }
-  #car-lines-1,
-  #car-lines-2 {
-    display: none!important;
-  }
+}
 
+body {
+  overflow-x: hidden;
+}
+.elementor-location-header {
+  z-index: 150;
+}
+.rside-broken-lines {
+  width: 2px;
+  height: 100vh;
+  position: absolute;
+  right: 30px;
+  z-index: 105;
+  transform: translateY(40vh);
+  transition: all ease .3s;
+  @include broken_lines_white();
+  filter: invert(10%);
+}
+.rside-broken-lines-2 {
+  width: 2px;
+  height: 100vh;
+  position: fixed;
+  right: 30px;
+  bottom: 0;
+  z-index: 101;
+  transform: translateY(40vh);
+  @include broken_lines_white();
+  filter: invert(10%);
+  &.adjust {
+    transform: translateY(0);
+  }
+}
+
+body:not(.home) #car-icon {
+  top: 40vh;
+}
+
+body.home {
   section.elementor-element-1e657f92,
   section.elementor-element-4760d35e,
   section.elementor-element-1edcfc8d {
@@ -199,6 +229,12 @@ body.home {
       @include broken_lines_white();
       filter: invert(50%);
     }
+  }
+  .rside-broken-lines-2,
+  .rside-broken-lines,
+  #car-lines-1,
+  #car-lines-2 {
+    display: none!important;
   }
 }
 body.home .site {
