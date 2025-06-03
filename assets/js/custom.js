@@ -39,8 +39,16 @@ jQuery(document).ready(function($){
     }
   }
 
-  $(window).on('scroll',function() {
+  $(window).on('scroll',function(e) {
+    var scroll = $(window).scrollTop();
     $("#car-icon").addClass('moved');
+    if (scroll > 150) {
+      $("#car-icon").addClass('moving');
+    } else {
+      $("#car-icon").removeClass('moving');
+    }
+
+    
     if($(window).scrollTop() + window.innerHeight > $(document).height() - 50) {
       $("#car-icon").addClass('bottom');
     } else {

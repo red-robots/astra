@@ -112,16 +112,21 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: fixed;
-  top: 40vh;
+  // top: 40vh;
+  top: 70px;
   right: 8px;
   z-index: 999;
   @include animateThis(1s);
   //animation: headShake 2s infinite;
-  transition: all ease .3s;
+  transform: translateY(0);
+  transition: all ease .5s;
+  &.moving {
+    top: 40vh;
+  }
   &.moved {
     animation-duration: 5s;
     animation: shakeY 4s infinite;
-    transform: translateY(60px);
+    transform: translateY(5vh);
   }
   &.bottom {
     top: 90vh!important;
