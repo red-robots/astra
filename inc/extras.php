@@ -1070,7 +1070,10 @@ function bellaworks_scripts() {
 /*-------------------------------------
   Adds Options page for ACF.
 ---------------------------------------*/
-if( function_exists('acf_add_options_page') ) {acf_add_options_page();}
+//if( function_exists('acf_add_options_page') ) {acf_add_options_page();}
+add_action('acf/init', function() {
+  if( function_exists('acf_add_options_page') ) {acf_add_options_page();}
+});
 
 add_shortcode('custom_tabs_slider', 'custom_tabs_slider_func');
 function custom_tabs_slider_func($atts) {

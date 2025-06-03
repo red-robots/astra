@@ -78,4 +78,29 @@ jQuery(document).ready(function($){
   });
 
 
+  if( $('.uael-posts .uael-post-wrapper').length ) {
+    $('.uael-posts .uael-post-wrapper').each(function(){
+      var targetPost = $(this);
+      var postClasses = $(this).attr('class');
+      if(postClasses) {
+        var parts = postClasses.split(' ');
+        if(parts.length) {
+          var newClass = '';
+          for(var i=0; i<parts.length; i++) {
+            var str = parts[i];
+            if(str.trim()) {
+              if( str.includes('&') ) {
+                str = str.replace('&','').replace('--','-');
+              }
+              newClass += ' '+str;
+            }
+          }
+          if(newClass) {
+            targetPost.attr('class', newClass);
+          }
+        }
+      }
+    });
+  }
+
 });
