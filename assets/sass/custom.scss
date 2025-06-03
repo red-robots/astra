@@ -351,3 +351,22 @@ body.elementor-page-1188 {
     }
   }
 }
+
+.infoBoxContainer .elementor-column {
+  .elementor-widget-wrap {
+    display: flex;
+    align-content: space-between;
+    &:has(.elementor-widget-button) {
+      .customInnerWrap {
+        padding-bottom: 25px;
+      }
+      .elementor-widget-button {
+        .elementor-widget-container {
+          margin: 0 0!important;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

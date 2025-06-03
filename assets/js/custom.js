@@ -103,4 +103,16 @@ jQuery(document).ready(function($){
     });
   }
 
+  if( $('.infoBoxContainer .elementor-column').length ) {
+    $('.infoBoxContainer .elementor-column').each(function(){
+      if( $(this).find('.elementor-widget-wrap').length ) {
+        var infoBox = $(this).find('.elementor-widget-wrap');
+        $(this).find('.elementor-widget-wrap').wrapInner('<div class="customInnerWrap" />');
+        if( $(this).find('.elementor-widget-button').length ) {
+          $(this).find('.elementor-widget-button').appendTo(infoBox);
+        }
+      }
+    });
+  }
+
 });
